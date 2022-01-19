@@ -12,15 +12,15 @@
   <input id="__urlbox" placeholder="Type address...." value="/public/index.hr"></input>
   <button onclick="visit()" type="submit">Go!</button>
 </div>
-<br>
 <div id="__view"><p id="nojs">It seems like you disabled Javascript. Because of that, This site won't work anymore.</p></div>
+<br><br><br>
 <span id="__mesg"></span>
 <button id="__darkmode" onclick="darkmode()">Dark Mode</button>
 </body>
 <style>
 #__mesg {
 	position: fixed;
-	bottom: 4px;
+	bottom: 30px;
 	left: 4px;
 	display: block;
 	border: solid;
@@ -46,11 +46,11 @@ button {
 #__addressbar {
 	position: fixed;
 	z-index: 2;
-	top: 0;
-	left: 0;
+	left: 4px;
 	width: auto;
 	height: auto;
 	border: solid;
+	bottom: 4px;
 }
 
 
@@ -93,7 +93,7 @@ document.getElementById("nojs").style.display = "none";
 			viewelem.innerHTML = render(body);
 			msg("Loaded in " + ((Date.now() - startDate) / 100).toFixed(2) + "s");
 		} catch (err) {
-			msg("Something Went Wrong!<br>" + err.toString(), 1);
+			msg("Failed to Load!<br>" + err.toString(), 1);
 		}
 	}
 
