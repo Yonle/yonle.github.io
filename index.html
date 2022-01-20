@@ -87,7 +87,7 @@ document.getElementById("nojs").style.display = "none";
 	// Function to go & load....
 	async function goTo(url, f) {
 		let startDate = Date.now();
-		msg("Loading " + url + "....");
+		msg("Loading " + url + "....", 0, 1);
 		abox.value = url;
 		try {
 			let res = await fetch(url);
@@ -96,7 +96,7 @@ document.getElementById("nojs").style.display = "none";
 				return;
 			}
 			if (!res.ok) throw "Server responded with " + res.status;
-			msg("Server responded. Waiting for reply....");
+			msg("Server responded. Waiting for reply....", 0, 1);
 			let body = await res.text();;
 			viewelem.innerHTML = render(body);
 			let as = document.getElementsByTagName("a");
