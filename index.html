@@ -37,8 +37,7 @@ body {
 button {
 	border: solid;
 	border-radius: 3px;
-	color: black;
-	background: white;
+	background: transparent;
 }
 
 #__darkmode {
@@ -67,6 +66,7 @@ document.getElementById("nojs").style.display = "none";
 	const viewelem = document.getElementById("__view"); // View Elememt
 	const mesgelem = document.getElementById("__mesg"); // Error message element.
 	const dmelem = document.getElementById("__darkmode");
+	let abox = document.getElementById("__urlbox");
 	let dm = false;
 	if (typeof hender !== "function") {
 		document.write("hender() is not a function, Or a component is failed to load in your browser. Please try again later or refresh the page. If the problem still persist, Check your network connection and browser update, or contact to the website owner.");
@@ -75,29 +75,41 @@ document.getElementById("nojs").style.display = "none";
 
 	const render = hender();
 
-	function msg(m, e) {
+	function msg(m, e, nt) {
 		if (mesgelem.timeout) clearTimeout(mesgelem.timeout);
 		mesgelem.style.display = "block";
 		mesgelem.innerHTML = m;
 		mesgelem.style.color = e ? "red" : (dm ? "white" : "black");
-		mesgelem.timeout = setTimeout(() => {
+		if (!nt) mesgelem.timeout = setTimeout(() => {
 		mesgelem.style.display = "none";
 		}, 5000);
 	}
 
 	// Function to go & load....
-	async function goTo(url) {
+	async function goTo(url, f) {
 		let startDate = Date.now();
 		msg("Loading " + url + "....");
+		abox.value = url;
 		try {
 			let res = await fetch(url);
+			if (!f && res.headers['content-type'] && !res.headers['content-type'].startsWith("text")) {
+					msg(`The link that you tap does not seem supported with this client.<br><br>Continue anyway, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Continue anyway</button><button onclick="hide_msg()">Cancel</button>`, 1);
+				return;
+			}
 			if (!res.ok) throw "Server responded with " + res.status;
 			msg("Server responded. Waiting for reply....");
 			let body = await res.text();;
 			viewelem.innerHTML = render(body);
+			let as = document.getElementsByTagName("a");
+			for (a in as) {
+				let aurl = as[a].href;
+				if (!as[a] || !as[a].href) continue;
+				as[a].onclick = _ => goTo(aurl);
+				as[a].href = "#" + as[a].href;
+			}
 			msg("Loaded in " + ((Date.now() - startDate) / 100).toFixed(2) + "s");
 		} catch (err) {
-			msg("Failed to Load!<br>" + err.toString(), 1);
+			msg(`<b>Failed to requesting to the server:</b><br>${err.toString()}<br><br> It seems like the URL is not Hender website, However you may open it in new tab.<br><br>Request again, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Reload</button><button onclick="hide_msg()">Cancel</button>`, 0, 1);
 		}
 	}
 
@@ -121,8 +133,11 @@ document.getElementById("nojs").style.display = "none";
 		}
 	}
 
+	function hide_msg() {
+		mesgelem.style.display = "none";
+	}
+
 	function visit() {
-		let abox = document.getElementById("__urlbox");
 		goTo(abox.value);
 	}
 
