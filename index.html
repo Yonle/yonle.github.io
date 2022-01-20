@@ -88,6 +88,7 @@ document.getElementById("nojs").style.display = "none";
 	async function goTo(url, f) {
 		let startDate = Date.now();
 		msg("Loading " + url + "....", 0, 1);
+		location.hash = "#" + url;
 		abox.value = url;
 		try {
 			let res = await fetch(url);
@@ -141,6 +142,6 @@ document.getElementById("nojs").style.display = "none";
 	}
 
 	// Load main page
-	goTo("/public/index.hr");
+	goTo(location.hash.startsWith("#") ? location.hash.slice(1) : "/public/index.hr");
 </script>
 </html>
