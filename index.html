@@ -24,19 +24,19 @@ body {
 
 #__mesg {
 	position: fixed;
-	bottom: 30px;
+	bottom: 32px;
 	left: 4px;
 	display: block;
-	border: solid;
-	border-radius: 3px;
+	border: solid 1px;
+	border-radius: 4px;
 	color: red;
 	background: white;
 	z-index: 3;
 }
 
 button {
-	border: solid;
-	border-radius: 3px;
+	border: solid 1px;
+	border-radius: 4px;
 	background: transparent;
 }
 
@@ -52,10 +52,9 @@ button {
 	left: 4px;
 	width: auto;
 	height: auto;
-	border: solid;
+	border: solid 1px;
 	bottom: 4px;
 }
-
 
 </style>
 <script>
@@ -93,7 +92,7 @@ document.getElementById("nojs").style.display = "none";
 		try {
 			let res = await fetch(url);
 			if (!f && res.headers['content-type'] && !res.headers['content-type'].startsWith("text")) {
-					msg(`The link that you tap does not seem supported with this client.<br><br>Continue anyway, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Continue anyway</button><button onclick="hide_msg()">Cancel</button>`, 1);
+				msg(`The link that you tap does not seem supported with this client.<br><br>Continue anyway, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Continue anyway</button><button onclick="hide_msg()">Cancel</button>`, 1);
 				return;
 			}
 			if (!res.ok) throw "Server responded with " + res.status;
