@@ -111,7 +111,7 @@ document.getElementById("nojs").style.display = "none";
 				as[a].onclick = _ => goTo(aurl);
 				as[a].href = "#" + as[a].href;
 			}
-			msg("Loaded in " + ((Date.now() - startDate) / 100).toFixed(2) + "s");
+			msg("Loaded in " + ((Date.now() - startDate) / 1000).toFixed(2) + "s");
 		} catch (err) {
 			msg(`<b>Failed to requesting to the server:</b><br>${err.toString()}<br><br> It seems like the URL is not Hender website, However you may open it in new tab.<br><br>Request again, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Reload</button><button onclick="hide_msg()">Cancel</button>`, 0, 1);
 		}
