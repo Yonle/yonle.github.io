@@ -159,9 +159,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       </div>
     </div>
     
-    <pre class="border" id="spamchatbox">
-      
-    </pre>
+    <p class="border" id="spamchatbox"></p>
 
     <header>
       <div>
@@ -175,7 +173,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
         <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
       </div>
       <pre style="color: grey">Copyright 2023 The Yonle Projects</pre>
-      <small>Do not take anything in this website too seriously.</small>
+      <small>Do not take anything in this website seriously.</small>
     </header>
   </div>
   <script>
@@ -227,7 +225,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
     let els = 0;
     let int = setInterval(() => {
-      if (els >= 40) return clearInterval(int);
+      if (els >= 45) return clearInterval(int);
       els++
 
       let doc = document.createElement("pre");
@@ -245,7 +243,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     }
     
     let chatbox = document.getElementById("spamchatbox");
-    let nicks = "gnome Yonle nano mike john wick anon nanon fedi rick rock lamp orun ina qon michael relom rina wawaoka kokinori limsp 291am".split(" ");
+    let nicks = "gnome Yonle nano mike john wick anon nanon fedi rick rock lamp orun ina qon michael relom rina wawaoka kokinori limsp 291am hent lfoa pqpq mnfjah ilmank ocushe owwww owowwowo".split(" ");
     let messages = [
       "So how is your CPU?",
       "The hell the spams here",
@@ -278,16 +276,73 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       "APAAN TUH",
       "WOE NGENTOD",
       "ASW",
-      "KAU CIUM MEMBER KAU DEKAT DEPAN PUBLIK YE!?"
+      "LMAO",
+      "LMFAO",
+      "KAU CIUM MEMBER KAU DEKAT DEPAN PUBLIK YE!?",
+      "NIGGAS STILL SAYS THAT TELEGRAM IS SECURE LMFAO",
+      "WhatsApp is better than Telegram",
+      "Telegram is gay",
+      "Github is gay",
+      "WhatsApp is gay",
+      "Signal is gay",
+      "Session is gay",
+      "Facebook is gay",
+      "Twitter is gay",
+      "Fediverse is gay",
+      "XMPP is gay",
+      "IRC is gay",
+      "Snapchat is gay",
+      "Instagram is gay",
+      "Tiktok better suck my dick",
+      "Youtube is gay",
+      "The best LEGAL & unblocked porn is available at youtube and tiktok",
+      "Onlyfans is gay",
+      "Patreon is gay",
+      "Librepay is gay",
+      "Kofi is gay",
+      "I am gay",
+      "You are gay",
+      "Telegram Open Source but not free lmfaoooooooo",
+      "TELEGRAM, THE ZONE OF PORNS",
+      "AKJXISJXIAJXIAJAKJDJAHXHAJXJAKXBSKJSJAIXNSJD",
+      "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "*kekw*",
+      "Then they fucked up",
+      "Trakteer is gay",
+      "Matrix is gay",
+      "Tor is gay",
+      "I2P is gay",
+      "yggdrasil is gay",
+      "Freenet is gay",
+      "Discord is gay",
+      "Your ISP is gay",
+      "Your ISP is poor lol",
+      "AOWKWOKWOWKWOWKWOKWOWKWOWKWOWKWOWKOOWKWOWKWOO",
+      "SIANJENG AOWKOWKWOWKWOWKWOWKOWKWOWKWOWKWOWKWOWKWO",
+      "Masturbating to cartoons",
+      "Then you fucked up",
+      "WHAT, YOU MASTURBATE!?",
+      "Bro got caught in 4K",
+      "Every single thing is gay",
+      "Komintod",
+      "Komintod kerjanya ngentod",
+      "Kominfo kerjanya ngentod",
+      "Kominfod",
+      "Sex",
+      "I would like to sex with you",
+      "C u m s"
     ];
     let msges = [];
-    setInterval(() => {
+    function sendmsg() {
       let date = new Date();
       msges.push(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] < ${nicks[Math.floor(Math.random() * nicks.length)]}> ${messages[Math.floor(Math.random() * messages.length)]}`);
       
       if (msges.length > 15) msges.shift();
       chatbox.innerText = msges.join("\n");
-    }, 250);
+    }
+
+    setInterval(sendmsg, 250);
+    setInterval(sendmsg, 100 + Math.floor(Math.random() * 500));
   </script>
 </body>
 
