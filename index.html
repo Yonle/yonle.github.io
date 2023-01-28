@@ -73,7 +73,6 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
   .desc {
     width: 210px;
-    overflow-x: inherit;
   }
 
   .nomargin {
@@ -84,11 +83,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 <body>
   <div id="anims"></div>
   <div>
-    <div style="margin-top: 8px; margin-bottom: 5px;">
-      <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
-      <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
-    </div>
-    <h1>Yonle</h1>
+    <h1 style="margin-top: 15px;">Yonle</h1>
     <pre class="desc">I am gravely disappointed.</pre>
     <marquee behavior="" direction="left">Self taught programmer from Indonesia</marquee>
 
@@ -158,8 +153,6 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
         </div>
       </div>
     </div>
-    
-    <p class="border" id="spamchatbox"></p>
 
     <header>
       <div>
@@ -241,137 +234,6 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
       animate(desc);
     }
-    
-    let chatbox = document.getElementById("spamchatbox");
-    let nicks = "gnome Yonle nano mike john wick anon nanon fedi rick rock lamp orun ina qon michael relom rina wawaoka kokinori limsp 291am hent lfoa pqpq mnfjah ilmank ocushe owwww owowwowo".split(" ");
-    let messages = [
-      "So how is your CPU?",
-      "The hell the spams here",
-      "Lol",
-      "Get local spammed",
-      "Kek",
-      "MWAHAHAHAHA",
-      "I AM GNOME, AND YOU'VE BEEN GNOMED",
-      "Discord is only for FAGGOTS",
-      "Your opinion sucks",
-      "You say you hate a company that track you but YOU STILL USE DISCORD???",
-      "HOW LAME!",
-      "WHAT",
-      "AYEEEE~~~",
-      "UWU",
-      "NANI? EASY MODE!? HOW LAAAME!!!!",
-      "Everybody gangsta before they realized that this chatbox is fake",
-      "DICK CORD",
-      "Fuck discord",
-      "Saying better in security but STILL PROMOTE DISCORD!?",
-      "KIMOIIIIIII",
-      "What an randomness",
-      "We hope you enjoy this site, You little monke",
-      "BAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA",
-      "YOU'RE ALL NIGGERS",
-      "WE ARE NIGGERS",
-      "UWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH SEEEEEEEEEEEEGGGGGSSSS (  TxT)",
-      "FAGGOT LOGGING US TO SELL US TO BECOME A FUCKING MONEY",
-      "KALIAN SEMUA NGENTOD",
-      "APAAN TUH",
-      "WOE NGENTOD",
-      "ASW",
-      "LMAO",
-      "LMFAO",
-      "KAU CIUM MEMBER KAU DEKAT DEPAN PUBLIK YE!?",
-      "NIGGAS STILL SAYS THAT TELEGRAM IS SECURE LMFAO",
-      "WhatsApp is better than Telegram",
-      "Telegram is gay",
-      "Github is gay",
-      "WhatsApp is gay",
-      "Signal is gay",
-      "Session is gay",
-      "Facebook is gay",
-      "Twitter is gay",
-      "Fediverse is gay",
-      "XMPP is gay",
-      "IRC is gay",
-      "Snapchat is gay",
-      "Instagram is gay",
-      "Tiktok better suck my dick",
-      "Youtube is gay",
-      "The best LEGAL & unblocked porn is available at youtube and tiktok",
-      "Onlyfans is gay",
-      "Patreon is gay",
-      "Librepay is gay",
-      "Kofi is gay",
-      "I am gay",
-      "You are gay",
-      "Telegram Open Source but not free lmfaoooooooo",
-      "TELEGRAM, THE ZONE OF PORNS",
-      "AKJXISJXIAJXIAJAKJDJAHXHAJXJAKXBSKJSJAIXNSJD",
-      "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-      "*kekw*",
-      "Then they fucked up",
-      "Trakteer is gay",
-      "Matrix is gay",
-      "Tor is gay",
-      "I2P is gay",
-      "yggdrasil is gay",
-      "Freenet is gay",
-      "Discord is gay",
-      "Your ISP is gay",
-      "Your ISP is poor lol",
-      "AOWKWOKWOWKWOWKWOKWOWKWOWKWOWKWOWKOOWKWOWKWOO",
-      "SIANJENG AOWKOWKWOWKWOWKWOWKOWKWOWKWOWKWOWKWOWKWO",
-      "Masturbating to cartoons",
-      "Then you fucked up",
-      "WHAT, YOU MASTURBATE!?",
-      "Bro got caught in 4K",
-      "Every single thing is gay",
-      "Komintod",
-      "Komintod kerjanya ngentod",
-      "Kominfo kerjanya ngentod",
-      "Kominfod",
-      "Sex",
-      "I would like to sex with you",
-      "C u m s",
-      "Memek",
-      "Dasar memek",
-      "Memeq",
-      "Dasar memeq",
-      "Budak dajal",
-      "ANAK HARAM",
-      "Stay in haram",
-      "Linux is gay",
-      "BSDs is gay",
-      "Windows is gay",
-      "Android is sexy but also gay",
-      "Internet is gay",
-      "Firefox is gay",
-      "Chrome is gay",
-      "Microsoft is gay",
-      "Github is gay",
-      "Google is gay",
-      "Bing is gay",
-      "Edge is gay",
-      "Brave is gay",
-      "Gitlab is gay",
-      "Gitea is gay",
-      "Loli?",
-      "WANGY WANGY",
-      "Lolicon",
-      "Mastodong",
-      "Plerodong",
-      "Missdong",
-      "TwT TwT TwT UWOOOOH C*NNYYYYYYYYYYYYYYYYYYYYYYYY TwT TwT TwT",
-    ];
-    let msges = [];
-    function sendmsg() {
-      let date = new Date();
-      msges.push(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] < ${nicks[Math.floor(Math.random() * nicks.length)]}> ${messages[Math.floor(Math.random() * messages.length)]}`);
-      
-      if (msges.length > 15) msges.shift();
-      chatbox.innerText = msges.join("\n");
-    }
-
-    setInterval(sendmsg, 250);
-    setInterval(sendmsg, 100 + Math.floor(Math.random() * 500));
   </script>
 </body>
 
