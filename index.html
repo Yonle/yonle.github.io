@@ -1,166 +1,294 @@
 <!DOCTYPE html>
 <!--
 
-Copyright 2022 Yonle <yonle@duck.com>
-	
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+The ISC License
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Copyright 2023 Yonle <yonle@lecturify.net>
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
 
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <html>
+
 <head>
-  <title>Yonle</title>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My personal site.">
+  <title>Yonle</title>
 </head>
-<body>
-<div id="__addressbar">
-  <input id="__urlbox" placeholder="Type address...." value="/public/index.hr"></input>
-  <button onclick="visit()" type="submit">Go!</button>
-</div>
-<div id="__view"><p id="nojs">It seems like you disabled Javascript. Because of that, This site won't work anymore.</p></div>
-<br><br>
-<span id="__mesg"></span>
-<button id="__darkmode" onclick="darkmode()">Dark Mode</button>
-</body>
+
 <style>
-body {
-	font-family: sans-serif;
-}
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .wrap {
+    margin-top: 0;
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+  }
 
-#__mesg {
-	position: fixed;
-	bottom: 32px;
-	left: 4px;
-	display: block;
-	border: solid 1px;
-	border-radius: 4px;
-	color: red;
-	background: white;
-	z-index: 3;
-}
+  body {
+    padding: 0;
+    display: flex;
+    font-family: monospace;
+    font-style: monospace;
+  }
 
-button {
-	border: solid 1px;
-	border-radius: 4px;
-	background: white;
-}
+  div {
+    padding: 5px;
+  }
 
-#__darkmode {
-	position: fixed;
-	bottom: 4px;
-	right: 4px;
-}
+  a {
+    color: black;
+  }
 
-#__addressbar {
-	position: fixed;
-	z-index: 2;
-	left: 4px;
-	width: auto;
-	height: auto;
-	border: solid 1px;
-	bottom: 4px;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 
-i {
-	color: grey;
-}
+  .border {
+    border: solid;
+    max-width: 100%;
+  }
 
+  .desc {
+    width: 210px;
+    overflow-x: inherit;
+  }
+
+  .nomargin {
+    margin: 0;
+  }
 </style>
-<script>
-document.getElementById("nojs").style.display = "none";
-</script>
-<script src="index.js"></script>
-<script>
-	const viewelem = document.getElementById("__view"); // View Elememt
-	const mesgelem = document.getElementById("__mesg"); // Error message element.
-	const dmelem = document.getElementById("__darkmode");
-	let abox = document.getElementById("__urlbox");
-	let dm = false;
-	if (typeof hender !== "function") {
-		document.write("hender() is not a function, Or a component is failed to load in your browser. Please try again later or refresh the page. If the problem still persist, Check your network connection and browser update, or contact to the website owner.");
-		throw new Error("hender() is not a function!");
-	}
 
-	const render = hender();
+<body>
+  <div id="anims"></div>
+  <div>
+    <div style="margin-top: 8px; margin-bottom: 5px;">
+      <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+      <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+    </div>
+    <h1>Yonle</h1>
+    <pre class="desc">I am gravely disappointed.</pre>
+    <marquee behavior="" direction="left">Self taught programmer from Indonesia</marquee>
 
-	function msg(m, e, nt) {
-		if (mesgelem.timeout) clearTimeout(mesgelem.timeout);
-		mesgelem.style.display = "block";
-		mesgelem.innerHTML = m;
-		mesgelem.style.color = e ? "red" : (dm ? "white" : "black");
-		if (!nt) mesgelem.timeout = setTimeout(() => {
-		mesgelem.style.display = "none";
-		}, 5000);
-	}
+    <p>Also known as <a href="https://lecturify.net">lecturify.net</a> sysadmin.</p>
 
-	// Function to go & load....
-	async function goTo(url, f) {
-		let startDate = Date.now();
-		msg("Loading " + url + "....", 0, 1);
-		location.hash = "#" + url;
-		abox.value = url;
-		try {
-			let res = await fetch(url);
-			if (!f && res.headers['content-type'] && !res.headers['content-type'].startsWith("text")) {
-				msg(`The link that you tap does not seem supported with this client.<br><br>Continue anyway, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Continue anyway</button><button onclick="hide_msg()">Cancel</button>`, 1);
-				return;
-			}
-			if (!res.ok) throw "Server responded with " + res.status;
-			msg("Server responded. Waiting for reply....", 0, 1);
-			let body = await res.text();;
-			viewelem.innerHTML = render(body);
-			let as = document.getElementsByTagName("a");
-			for (a in as) {
-				let aurl = as[a].href;
-				if (!as[a] || !as[a].href) continue;
-				as[a].onclick = _ => goTo(aurl);
-				as[a].href = "#" + as[a].href;
-			}
-			msg("Loaded in " + ((Date.now() - startDate) / 1000).toFixed(2) + "s");
-		} catch (err) {
-			msg(`<b>Failed to requesting to the server:</b><br>${err.toString()}<br><br> It seems like the URL is not Hender website, However you may open it in new tab.<br><br>Request again, or open in new tab?<br><br><button onclick="window.open('${url}')">Open in new Tab</button><button onclick="goTo('${url}')">Reload</button><button onclick="hide_msg()">Cancel</button>`, 0, 1);
-		}
-	}
+    <div class="border" style="margin-top: 5px;">
+      <h2>Projects</h2>
+      <div style="display: flex;">
+        <div class="border">
+          <h3><a href="https://github.com/ytmous/ytmous">ytmous</a></h3>
+          <small>Well Known</small>
+          <pre class="desc">Anonymous YouTube Proxy</pre>
+        </div>
 
-	function darkmode() {
-		if (dm) {
-			document.body.style.color = "black";
-			document.body.style.background = "white";
-			dmelem.innerHTML = "Dark Mode";
-			dmelem.style.background = "white";
-			dmelem.style.color = "black";
-			mesgelem.style.background = "white";
-			dm = false;
-		} else {
-			document.body.style.color = "white";
-			document.body.style.background = "black";
-			dmelem.innerHTML = "Light Mode";
-			dmelem.style.background = "black";
-			dmelem.style.color = "white";
-			mesgelem.style.background = "black";
-			dm = true;
-		}
-	}
+        <div class="border">
+          <h3><a href="https://toard.glitch.me">Toard</h3>
+          <small>Well Known</small>
+          <pre class="desc">Text only Bulletin Board</pre>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="border">
+          <h3><a href="https://yonle.github.io/cnwordgame">cnwordgame</a></h3>
+          <small>Old Project</small>
+          <pre class="desc">Chinese Training Words game</pre>
+        </div>
+        
+        <div class="border">
+          <h3><a href="https://github.com/Yonle/speedtest">Speedtest</a></h3>
+          <small>Old Project</small>
+          <pre class="desc">Simple speedtest server.</pre>
+        </div>
+      </div>
+      <small>See <a href="https://github.com/Yonle">my GitHub</a> for more.</small>
+    </div>
 
-	function hide_msg() {
-		mesgelem.style.display = "none";
-	}
+    <div class="border" style="margin-top: 5px;">
+      <h2>Social Media / Contact</h2>
+      <div style="display: flex;">
+        <div class="border">
+          <h3>Fediverse</h3>
+          <small>Active here</small>
+          <a href="https://fedi.lecturify.net/users/yonle">
+            <pre class="desc">yonle@fedi.lecturify.net</pre>
+          </a>
+        </div>
 
-	function visit() {
-		goTo(abox.value);
-	}
+        <div class="border">
+          <h3>E-mail</h3>
+          <a href="mailto:yonle@lecturify.net">
+            <pre class="desc">yonle@lecturify.net</pre>
+          </a>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="border">
+          <h3>IRC</h3>
+          <small>Active here</small>
+          <pre class="desc">#yonle at irc.lecturify.net</pre>
+        </div>
+        <div class="border">
+          <h3>XMPP</h3>
+          <small>Active here</small>
+          <a href="xmpp:yonle@lecturify.net">
+            <pre class="desc">yonle@lecturify.net</pre>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <pre class="border" id="spamchatbox">
+      
+    </pre>
 
-	// Load main page
-	goTo(location.hash.startsWith("#") ? location.hash.slice(1) : "/public/index.hr");
-</script>
+    <header>
+      <div>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+        <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
+      </div>
+      <pre style="color: grey">Copyright 2023 The Yonle Projects</pre>
+      <small>Do not take anything in this website too seriously.</small>
+    </header>
+  </div>
+  <script>
+    let d = document.getElementById("ye");
+
+    function animate(d, text, int, func) {
+      let tmp = "";
+
+      if (!text) text = d.innerText;
+      if (!text) return;
+
+      let splittedText = text.split("");
+
+      let mode = 0;
+      let meint = setInterval(() => {
+        switch (mode) {
+          case 0:
+            tmp += splittedText.shift();
+            d.innerText = tmp;
+            if (!splittedText.length) {
+              mode = 1;
+              splittedText = text.split("");
+            }
+
+            break;
+          case 1:
+            tmp = tmp.slice(1);
+            d.innerText = (text.slice(tmp.length).replace(/./g, " ")) + tmp;
+
+            if (!tmp.length) {
+              if (func) {
+                func();
+                return clearInterval(meint);
+              }
+              return mode = 0;
+            }
+            break;
+        }
+      }, int || 40);
+      
+      return meint;
+    }
+
+    function animates(d, i) {
+      return setInterval(() => {
+        d.innerText = d.innerText.slice(1) + d.innerText.slice(0, 1);
+      }, i || 100);
+    }
+
+    let els = 0;
+    let int = setInterval(() => {
+      if (els >= 40) return clearInterval(int);
+      els++
+
+      let doc = document.createElement("pre");
+      //doc.style.opacity = 0.5;
+      document.getElementById("anims").appendChild(doc);
+
+      animate(doc, "111111", 25 + Math.floor(Math.random() * 25))
+    }, 25);
+
+    let descs = document.getElementsByClassName("desc");
+    for (el in descs) {
+      let desc = descs[el];
+
+      animate(desc);
+    }
+    
+    let chatbox = document.getElementById("spamchatbox");
+    let nicks = "gnome Yonle nano mike john wick anon nanon fedi rick rock lamp orun ina qon michael relom rina wawaoka kokinori limsp 291am".split(" ");
+    let messages = [
+      "So how is your CPU?",
+      "The hell the spams here",
+      "Lol",
+      "Get local spammed",
+      "Kek",
+      "MWAHAHAHAHA",
+      "I AM GNOME, AND YOU'VE BEEN GNOMED",
+      "Discord is only for FAGGOTS",
+      "Your opinion sucks",
+      "You say you hate a company that track you but YOU STILL USE DISCORD???",
+      "HOW LAME!",
+      "WHAT",
+      "AYEEEE~~~",
+      "UWU",
+      "NANI? EASY MODE!? HOW LAAAME!!!!",
+      "Everybody gangsta before they realized that this chatbox is fake",
+      "DICK CORD",
+      "Fuck discord",
+      "Saying better in security but STILL PROMOTE DISCORD!?",
+      "KIMOIIIIIII",
+      "What an randomness",
+      "We hope you enjoy this site, You little monke",
+      "BAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA",
+      "YOU'RE ALL NIGGERS",
+      "WE ARE NIGGERS",
+      "UWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH SEEEEEEEEEEEEGGGGGSSSS (  TxT)",
+      "FAGGOT LOGGING US TO SELL US TO BECOME A FUCKING MONEY",
+      "KALIAN SEMUA NGENTOD",
+      "APAAN TUH",
+      "WOE NGENTOD",
+      "ASW",
+      "KAU CIUM MEMBER KAU DEKAT DEPAN PUBLIK YE!?"
+    ];
+    let msges = [];
+    setInterval(() => {
+      let date = new Date();
+      msges.push(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] < ${nicks[Math.floor(Math.random() * nicks.length)]}> ${messages[Math.floor(Math.random() * messages.length)]}`);
+      
+      if (msges.length > 15) msges.shift();
+      chatbox.innerText = msges.join("\n");
+    }, 250);
+  </script>
+</body>
+
 </html>
