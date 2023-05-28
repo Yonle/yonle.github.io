@@ -113,6 +113,13 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
           <pre class="desc">Text only Bulletin Board</pre>
         </div>
       </div>
+      <div>
+        <div class="border">
+          <h3><a href="https://githuh.com/Yonle/Tird">Tird</a></h3>
+          <small>Well Known</small>
+          <pre class="desc">Text & Image bulletin Board</pre>
+        </div>
+      </div>
       <div style="display: flex;">
         <div class="border">
           <h3><a href="https://yonle.github.io/cnwordgame">cnwordgame</a></h3>
@@ -170,6 +177,15 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
           </a>
         </div>
       </div>
+      <div>
+        <div class="border">
+          <h3><a href="nostr:npub1x3azxuysp5vmfer4vgs4jn5tmfcx4ew8sh0qnev7gczljxsr7jwqa3g4el">Nostr</a></h3>
+          <small>Active here</small>
+          <a href="nostr:npub1x3azxuysp5vmfer4vgs4jn5tmfcx4ew8sh0qnev7gczljxsr7jwqa3g4el">
+            <marquee>npub1x3azxuysp5vmfer4vgs4jn5tmfcx4ew8sh0qnev7gczljxsr7jwqa3g4el</marquee>
+          </a>
+        </div>
+      </div>
     </div>
 
     <header>
@@ -183,7 +199,8 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
         <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
         <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
       </div>
-      <small style="color: grey">Copyright 2023 The Yonle Projects</small>
+      <small style="color: grey">Copyright 2023 The Yonle Projects</small></br>
+      <small onclick="freeze()">Do not tap this or freeze</small>
     </header>
   </div>
   <script>
@@ -231,6 +248,12 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       return setInterval(() => {
         d.innerText = d.innerText.slice(1) + d.innerText.slice(0, 1);
       }, i || 100);
+    }
+
+    function freeze() {
+      while (true) {
+        "lol".repeat(9*9*9*9*9*9*9*9)
+      }
     }
 
     let els = 0;
