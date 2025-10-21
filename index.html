@@ -3,7 +3,7 @@
 
 The ISC License
 
-Copyright 2023 Yonle <yonle@lecturify.net>
+Copyright 2025 Yonle <yonle@lecturify.net>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -49,6 +49,9 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     display: flex;
     font-family: monospace;
     font-style: monospace;
+    font-size: 11pt;
+    background-color: black;
+    color: white;
   }
 
   div {
@@ -56,7 +59,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   }
 
   a {
-    color: black;
+    color: gray;
   }
 
   h1,
@@ -74,25 +77,32 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   }
 
   .desc {
-    width: 210px;
+    width: 500px;
   }
 
   .nomargin {
     margin: 0;
   }
+
+  #anims {
+    z-index: -1;
+    position: fixed;
+    opacity: 0.3;
+    transform:rotate(-90deg);
+    margin: 0;
+  }
+
+  #main {
+    margin: 0 10vw;
+  }
 </style>
 
 <body>
   <div id="anims"></div>
-  <div>
+  <div id="main">
     <h1 style="margin-top: 15px;">Yonle</h1>
     <pre style="margin-top: 0; margin-bottom: 2px;" class="desc">I am gravely disappointed.</pre>
-    <marquee behavior="" direction="left">Self taught programmer from Indonesia</marquee>
-
-    <br><br>
-
-    <a href="https://ytmous.lecturify.net/w/HLHl9smuTCU"><img src="soup.jpg" style="width: 300px;" /><br>
-    <small>The ocean is soup</small></a>
+    <marquee behavior="" direction="left">Self taught programmer from Indonesia that knows Go, Lua, JavaScript, Bash, and stuff...</marquee>
 
     <br><br>
 
@@ -103,7 +113,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       <div style="display: flex;">
         <div class="border">
           <h3><a href="https://github.com/ytmous/ytmous">ytmous</a></h3>
-          <small>Well Known</small>
+          <small>[Deprecated] Well Known</small>
           <pre class="desc">Anonymous YouTube Proxy</pre>
         </div>
 
@@ -136,23 +146,14 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       <small>See <a href="https://github.com/Yonle">my GitHub</a> for more.</small>
     </div>
 
-    <pre style="border: solid;">
-
-  Anime girls: <i>ties her shoe</i>
-  Also her:
-
-  <span style="color: red">Moans from the sheer impact of her fingers on the laces</span>
-    </pre>
-    <center><a href="https://ytmous.lecturify.net/w/Dui0tYvUa1I"><small>The inappropriate Anime and Toxic Fandoms</small></a></center>
-
     <div class="border" style="margin-top: 5px;">
       <h2>Social Media / Contact</h2>
       <div style="display: flex;">
         <div class="border">
           <h3>Fediverse</h3>
           <small>Active here</small>
-          <a href="https://fedi.lecturify.net/users/yonle">
-            <pre class="desc">yonle@fedi.lecturify.net</pre>
+          <a href="https://misskey.id/@yonle">
+            <pre class="desc">yonle@misskey.id</pre>
           </a>
         </div>
 
@@ -190,7 +191,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
         <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
         <pre class="desc nomargin">CODECODECODECODECODECODECODECODECODECODECODECODECODE</pre>
       </div>
-      <small style="color: grey">Copyright 2023 The Yonle Projects</small></br>
+      <small style="color: grey">Copyright 2025 The Yonle Projects</small></br>
       <small onclick="freeze()">Do not tap this or freeze</small>
     </header>
   </div>
@@ -256,7 +257,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       //doc.style.opacity = 0.5;
       document.getElementById("anims").appendChild(doc);
 
-      animate(doc, "1111", 25 + Math.floor(Math.random() * 25))
+      animate(doc, "1".repeat(screen.width/10), 25 + Math.floor(Math.random() * 25))
     }, 25);
 
     let descs = document.getElementsByClassName("desc");
